@@ -1,0 +1,54 @@
+<div class="form-container">
+  <h1>T K A P - [IS]</h1>
+  <form>
+    <div>
+      <label for="unitId">Unit ID:</label>
+      <input id="unitId" name="unitId" type="text" (dblclick)="onUnitIdDoubleClick($event)" (click)="onUnitIdClick($event)" (blur)="onUnitIdFieldExit($event)" />
+    </div>
+    <div>
+      <label for="unitName">Unit Name:</label>
+      <input id="unitName" name="unitName" type="text" readonly />
+    </div>
+    <div>
+      <label for="groupId">Group ID:</label>
+      <input id="groupId" name="groupId" type="text" (dblclick)="onGroupIdDoubleClick($event)" (click)="onGroupIdClick($event)" />
+    </div>
+    <div>
+      <label for="groupName">Group Name:</label>
+      <input id="groupName" name="groupName" type="text" readonly />
+    </div>
+    <div>
+      <label for="lineId">Line ID:</label>
+      <input id="lineId" name="lineId" type="text" (dblclick)="handleLineIdDoubleClick($event)" (click)="handleLineIdClick($event)" />
+    </div>
+    <div>
+      <label for="lineDesc">Line Description:</label>
+      <input id="lineDesc" name="lineDesc" type="text" readonly />
+    </div>
+    <div>
+      <label for="partId">Part ID:</label>
+      <input id="partId" name="partId" type="text" readonly />
+    </div>
+    <div>
+      <label for="partNo">Part Number:</label>
+      <input id="partNo" name="partNo" type="text" (dblclick)="onPartNoDoubleClick($event)" (click)="onPartNoClick($event)" />
+    </div>
+    <div>
+      <label for="partDesc">Part Description:</label>
+      <input id="partDesc" name="partDesc" type="text" (dblclick)="onPartDescDoubleClick($event)" (blur)="onNextItem($event)" />
+    </div>
+    <div>
+      <label for="partStatus">Part Status:</label>
+      <input id="partStatus" name="partStatus" type="text" readonly value="A" />
+    </div>
+    <div class="button-group">
+      <button type="button" (click)="onSaveButtonClick()" [disabled]="isSaveDisabled">Save</button>
+      <button type="button" (click)="clearForm()">Clear</button>
+      <button type="button" (click)="onEditButtonClick()">Edit</button>
+      <button type="button" (click)="onExitButtonClick()">Exit</button>
+    </div>
+  </form>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>
